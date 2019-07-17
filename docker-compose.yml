@@ -1,0 +1,10 @@
+version: '3'
+services:
+  micfinapp:
+      container_name: micfinapp
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - '3050:80'
+
