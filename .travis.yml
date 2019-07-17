@@ -1,3 +1,4 @@
+env: DOCKER_COMPOSE_VERSION: 1.8.0
 sudo: required
 language: node_js
 node_js:
@@ -9,10 +10,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t ggavarra/micfin-app
+  - docker-compose --version
+  - docker-compose pull
+  - docker-compose build
+  - docker-compose start
 
-script:
-  - docker run ggavarra/micfin-app npm test -- --coverage
 
 
 
