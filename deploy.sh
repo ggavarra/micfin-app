@@ -11,10 +11,10 @@ sudo chmod +x /usr/bin/ecs-deploy
 # Use this for AWS ECR
 eval $(	aws ecr get-login --no-include-email --region ap-southeast-1)
 
-docker-compose build
-docker tag ggavarra/micfin-app:latest $IMAGE_REPO_URL:latest
+
+docker build -t ggavarra/ecs-auto-deploy .
+docker tag ggavarra/ecs-auto-deploy:latest $IMAGE_REPO_URL:latest
 docker push $IMAGE_REPO_URL:latest
 
-ecs-deploy -c $CLUSTER_NAME -n $SERVICE_NAME -t 600 -i $IMAGE_REPO_URL:latest
-
+ecs-deploy -c $CLUSTER_NAME -n $SERVICE_NAME -i $IMAGE_REPO_URL:latest
 
