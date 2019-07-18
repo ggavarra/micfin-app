@@ -2,6 +2,7 @@ version: '3'
 services:
   micfinapp:
       container_name: micfinapp
+      image: micfin-app
       build:
         context: .
         dockerfile: Dockerfile

@@ -14,7 +14,7 @@ services:
 
 before_install:
     # list docker-engine versions
-    - apt-cache madison docker-engine
+   # - apt-cache madison docker-engine
 
     # upgrade docker-engine to specific version
    # - sudo apt-get -o Dpkg::Options::="--force-confnew" install -y docker-engine=${DOCKER_VERSION}
@@ -30,4 +30,8 @@ script:
     - docker version
     - docker-compose version
     - docker-compose build
+    - docker tag ggavarra/micfin-app:latest $IMAGE_REPO_URL:latest
+    - docker push $IMAGE_REPO_URL:latest
+
+
 
