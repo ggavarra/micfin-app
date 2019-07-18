@@ -30,7 +30,7 @@ script:
     - docker version
     - docker-compose version
     - docker-compose build
-    - docker tag micfin-app:latest $IMAGE_REPO_URL:latest
+    - docker tag ggavarra/micfin-app:latest $IMAGE_REPO_URL:latest
     - docker push $IMAGE_REPO_URL:latest
 
 

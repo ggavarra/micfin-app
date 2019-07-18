@@ -2,7 +2,7 @@ version: '3'
 services:
   micfinapp:
       container_name: micfinapp
-      image: micfin-app
+      image: ggavarra/micfin-app
       build:
         context: .
         dockerfile: Dockerfile
